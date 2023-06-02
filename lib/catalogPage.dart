@@ -42,20 +42,78 @@ class catalogPage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              
+              //Catalogo 1
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(30, 20, 30, 20),
-                  child: Text(
-                    '\nCatálogos',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black54,
-                    ),
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                               showDialog(context: context, 
+                               builder: (BuildContext context){
+                                  return AlertDialog(
+                                    title:Text('O que você deseja fazer?'),
+                                    content:Text('escolha uma das opções abaixo'),
+                                    actions: [
+TextButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: Text('Buscar caixa'),
+                                          ),
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                              // Adicione aqui a lógica para continuar
+                                            },
+                                            child: Text('Criar caixa'),
+                                          ),
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                              // Adicione aqui a lógica para continuar
+                                            },
+                                            child: Text('Apenas embalar'),
+                                          ),
+
+                                    ],
+                                    
+                                  );
+                               },);
+                              },
+                              child: Text(
+                                'Inciar embalagem',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                elevation: 10.0,
+                                backgroundColor:
+                                    Color.fromARGB(222, 54, 185, 246),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 20.0, vertical: 20.0),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              //Catalogo 1
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: Padding(

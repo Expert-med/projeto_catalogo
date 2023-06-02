@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'catalogPage.dart';
-import 'homePage.dart';
-import 'contactPage.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
      
       ),
-      home: HomePage(),
+      home: catalogPage(),
     );  
   }
 }
@@ -28,9 +27,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = [
-    homePage(),
+
     catalogPage(),
-    contactPage(),
+   
   
  
   ];
@@ -60,11 +59,7 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.info),
             label: 'Catálogos',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
-            label: 'Contato',
-
-          ),
+         
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
