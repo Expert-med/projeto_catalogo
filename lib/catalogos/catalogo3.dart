@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import '../Objetos/Instrumental.dart';
 import 'catalogo2.dart';
 import 'saiba_mais/saibamais_Pinca16cmKocher.dart';
-import 'saiba_mais/saibamais_Pinca16cmKocher.dart';
 import 'catalogoteste.dart';
 
-class catalogo2 extends StatefulWidget {
+class catalogo3 extends StatefulWidget {
   @override
-  _catalogo2 createState() => _catalogo2();
+  _catalogo3 createState() => _catalogo3();
 }
 
-class _catalogo2 extends State<catalogo2> {
- bool isChecked1 = false;
+class _catalogo3 extends State<catalogo3> {
+  bool isChecked1 = false;
   bool isChecked2 = false;
   bool isChecked3 = false;
   bool isChecked4 = false;
   bool isChecked5 = false;
-
-
+  bool isChecked6 = false;
+  List<String> selectedItems = [];
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class _catalogo2 extends State<catalogo2> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      'Caixa Coluna',
+                      'Caixa Joelho',
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.white,
@@ -50,6 +49,12 @@ class _catalogo2 extends State<catalogo2> {
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _configurandoModalBottomSheet(context);
+        },
+        child: Icon(Icons.add),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -97,7 +102,7 @@ class _catalogo2 extends State<catalogo2> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Pinça 1',
+                              'Pinça 2',
                               style: TextStyle(
                                 fontSize: 30,
                                 color: Colors.black54,
@@ -106,7 +111,7 @@ class _catalogo2 extends State<catalogo2> {
                             ),
                             SizedBox(height: 10),
                             Text(
-                              'Descrição: Pinça 1',
+                              'Descrição: Pinça 2',
                               style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
@@ -127,7 +132,7 @@ class _catalogo2 extends State<catalogo2> {
               SizedBox(
                 height: 20,
               ),
-               Container(
+              Container(
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
@@ -155,7 +160,7 @@ class _catalogo2 extends State<catalogo2> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Pinça 2',
+                              'Tesoura 1',
                               style: TextStyle(
                                 fontSize: 30,
                                 color: Colors.black54,
@@ -173,7 +178,7 @@ class _catalogo2 extends State<catalogo2> {
                               },
                               child: RichText(
                                 text: TextSpan(
-                                  text: 'Descrição: Pinça 2 ',
+                                  text: 'Descrição: Tesoura 1 ',
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.black,
@@ -196,6 +201,9 @@ class _catalogo2 extends State<catalogo2> {
                     ],
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -243,7 +251,7 @@ class _catalogo2 extends State<catalogo2> {
                               },
                               child: RichText(
                                 text: TextSpan(
-                                  text: 'Descrição: Tesoura 2 ',
+                                  text: 'Descrição: Tesoura 2',
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.black,
@@ -267,6 +275,7 @@ class _catalogo2 extends State<catalogo2> {
                   ),
                 ),
               ),
+
               SizedBox(
                 height: 20,
               ),
@@ -285,6 +294,80 @@ class _catalogo2 extends State<catalogo2> {
                             onChanged: (bool? value) {
                               setState(() {
                                 isChecked4 = value!;
+                              });
+                            },
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Bisturi 2',
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MyWidget()),
+                                );
+                              },
+                              child: RichText(
+                                text: TextSpan(
+                                  text: 'Descrição: Bisturi 2 ',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: '[Saiba Mais]',
+                                      style: TextStyle(
+                                        color: Colors.blue,
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        alignment: Alignment.topCenter,
+                        child: IntrinsicHeight(
+                          child: Checkbox(
+                            value: isChecked5,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                isChecked5 = value!;
                               });
                             },
                           ),
@@ -340,6 +423,7 @@ class _catalogo2 extends State<catalogo2> {
                   ),
                 ),
               ),
+
               SizedBox(
                 height: 20,
               ),
@@ -354,10 +438,10 @@ class _catalogo2 extends State<catalogo2> {
                         alignment: Alignment.topCenter,
                         child: IntrinsicHeight(
                           child: Checkbox(
-                            value: isChecked5,
+                            value: isChecked6,
                             onChanged: (bool? value) {
                               setState(() {
-                                isChecked5 = value!;
+                                isChecked6 = value!;
                               });
                             },
                           ),
@@ -371,7 +455,7 @@ class _catalogo2 extends State<catalogo2> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Bisturi 1',
+                              'Ponteira 2',
                               style: TextStyle(
                                 fontSize: 30,
                                 color: Colors.black54,
@@ -389,7 +473,7 @@ class _catalogo2 extends State<catalogo2> {
                               },
                               child: RichText(
                                 text: TextSpan(
-                                  text: 'Descrição: Bisturi 1',
+                                  text: 'Descrição: Ponteira 2 ',
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.black,
@@ -413,17 +497,8 @@ class _catalogo2 extends State<catalogo2> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-             
-              Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-                    child: Text(
-                        'Clique em saiba mais para verificar a tela Modal'),
-                  )),
+              Container(width: MediaQuery.of(context).size.width,
+                child: Padding(padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),child: Text('Clique em saiba mais para verificar a tela Modal'),)),
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
@@ -440,7 +515,7 @@ class _catalogo2 extends State<catalogo2> {
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                                if (!isChecked1 || !isChecked2 || !isChecked3|| !isChecked4 || !isChecked5) {
+                                if (!isChecked1 || !isChecked2) {
                                   showDialog(
                                     context: context,
                                     builder: (BuildContext context) {
@@ -496,6 +571,50 @@ class _catalogo2 extends State<catalogo2> {
           ),
         ),
       ),
+    );
+  }
+
+  void _configurandoModalBottomSheet(context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+          child: Wrap(
+            children: <Widget>[
+              ListTile(
+                leading: Icon(Icons.music_note),
+                title: Text('Pinça 16cm'),
+                onTap: () {
+                  setState(() {
+                    selectedItems.add('Pinça 16cm');
+                  });
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.videocam),
+                title: Text('Videos'),
+                onTap: () {
+                  setState(() {
+                    selectedItems.add('Videos');
+                  });
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.satellite),
+                title: Text('Tempo'),
+                onTap: () {
+                  setState(() {
+                    selectedItems.add('Tempo');
+                  });
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'catalogos/catalogo1.dart';
-import 'catalogos/catalogo2.dart';
+import 'catalogCaixas.dart';
 
 class catalogPage extends StatelessWidget {
   const catalogPage({super.key});
@@ -42,7 +41,6 @@ class catalogPage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              
               //Catalogo 1
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -57,37 +55,43 @@ class catalogPage extends StatelessWidget {
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                               showDialog(context: context, 
-                               builder: (BuildContext context){
-                                  return AlertDialog(
-                                    title:Text('O que você deseja fazer?'),
-                                    content:Text('escolha uma das opções abaixo'),
-                                    actions: [
-TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                            child: Text('Buscar caixa'),
-                                          ),
-                                          TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                              // Adicione aqui a lógica para continuar
-                                            },
-                                            child: Text('Criar caixa'),
-                                          ),
-                                          TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                              // Adicione aqui a lógica para continuar
-                                            },
-                                            child: Text('Apenas embalar'),
-                                          ),
-
-                                    ],
-                                    
-                                  );
-                               },);
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text('O que você deseja fazer?'),
+                                      content:
+                                          Text('escolha uma das opções abaixo'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      catalogoCaixas()),
+                                            );
+                                          },
+                                          child: Text('Buscar caixa'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                            // Adicione aqui a lógica para continuar
+                                          },
+                                          child: Text('Criar caixa'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                            // Adicione aqui a lógica para continuar
+                                          },
+                                          child: Text('Apenas embalar'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
                               },
                               child: Text(
                                 'Inciar embalagem',
@@ -108,133 +112,6 @@ TextButton(
                               ),
                             )
                           ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        alignment: Alignment.topCenter,
-                        child: IntrinsicHeight(
-                          child: Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 60,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Text(
-                          'teste',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black54,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Spacer(),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => catalogo1()),
-                          );
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            borderRadius: BorderRadius.circular(
-                                10), // Define o borderRadius desejado
-
-                            color: Colors
-                                .black26, // Define a cor de fundo desejada
-                          ),
-                          padding: EdgeInsets.all(12),
-                          child: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black54, // Define a cor do ícone
-                            size: 30,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-//Catalogo2
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        alignment: Alignment.topCenter,
-                        child: IntrinsicHeight(
-                          child: Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 60,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Text(
-                          'teste',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black54,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Spacer(),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => catalogo2()),
-                          );
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            borderRadius: BorderRadius.circular(
-                                10), // Define o borderRadius desejado
-
-                            color: Colors
-                                .black26, // Define a cor de fundo desejada
-                          ),
-                          padding: EdgeInsets.all(12),
-                          child: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black54, // Define a cor do ícone
-                            size: 30,
-                          ),
                         ),
                       ),
                     ],

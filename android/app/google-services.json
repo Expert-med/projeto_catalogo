@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "169131955234",
+    "firebase_url": "https://teste-cme-default-rtdb.firebaseio.com",
+    "project_id": "teste-cme",
+    "storage_bucket": "teste-cme.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169131955234:android:8a730a565553bf4397e67b",
+        "android_client_info": {
+          "package_name": "com.example.projeto_catalogos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169131955234-ar135q50kf45gi8mcdieo53i539sckdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7YT8ynNV_NmBIJ04nBstxHfDdnarx8mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169131955234-ar135q50kf45gi8mcdieo53i539sckdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
